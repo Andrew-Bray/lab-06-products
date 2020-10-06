@@ -1,8 +1,4 @@
-// import functions and grab DOM elements
-
-// initialize state
-// set event listeners to update state and DOM
-
+//makes the 
 export function renderSauce(sauce) {
  // creates the list element
     const li = document.createElement('li');

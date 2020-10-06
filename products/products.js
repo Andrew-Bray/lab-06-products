@@ -1,5 +1,5 @@
 import { sauceRecipes } from '../data.js';
-import { renderSauce } from '../app.js';
+import { renderSauce } from '../utils.js';
 
 const ul = document.querySelector('#sauce-list');
 

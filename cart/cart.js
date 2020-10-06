@@ -1,12 +1,12 @@
 import { sauceRecipes } from '../data.js';
-import { renderSauce } from '../app.js';
+import { sauceCart } from 'cart/cart.js';
 
-const ul = document.querySelector('#sauce-list');
+const tbody = document.querySelector('#sauce-cart');
 
 for (let i = 0; i < sauceRecipes.length; i++) {
     const sauce = sauceRecipes[i];
 
-    const li = renderSauce(sauce);
+    const tr = sauceCart(sauce);
 
-    ul.appendChild(li);
+    tbody.appendChild(tr);
 }
