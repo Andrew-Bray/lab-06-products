@@ -1,10 +1,10 @@
 
 body {
     --color1: #ffffff;
-    --color2: #ffffff;
-    --color3: #ffffff;
+    --color2: #194552;
+    --color3: #143843;
     --color4: #ffffff;
-    --color5: #ffffff;
+    --color5: #5a7591;
 
     /* https://coolors.co/generate and click export -> scss to get the colors to copy and paste below*/
     /* --color1: hsla(349, 69%, 76%, 1);
@@ -25,6 +25,7 @@ body {
     --footer-height: 25px;
     
     font-family: 'Titillium Web', sans-serif;
+    color: var(--color1);
     background-color: var(--color2);
 }
 
@@ -39,7 +40,7 @@ main {
 section {
     background-color: var(--color5);
     width: 1000px;
-    max-width: 80%;
+    max-width: 95%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,7 +49,6 @@ section {
     padding-bottom: var(--gutter);
     margin-top: var(--gutter);
     margin-bottom: var(--gutter);
-    border: solid 2px var(--color1);
 }
 
 header {
@@ -91,7 +91,7 @@ content {
 }
 
 p {
-    margin: var(--gutter);
+    margin: 5px;
 }
   
 footer {
