@@ -1,7 +1,7 @@
 
 export const sauceRecipes = [
     {
-        id: 'Cheese Sauce',
+        id: 'cheese-sauce',
         name: 'Vegan Nacho Cheese Sauce',
         image: '../assets/VeganCheesesauce.png',
         description: 'Do you want cheese, and NACHOS? But you are eating a plant-based diet? This sauce will be your new favorite recipe, guaranteed!!',
@@ -10,7 +10,7 @@ export const sauceRecipes = [
         happyprice: 5,
         price: 7
     },
-    { id: 'Tali Sauce',
+    { id: 'tali-sauce',
         name: 'Tali Sauce - As seen at \'The Whole Bowl\'',
         image: '../assets/Tali Sauce.png',
         description: 'If you haven\'t been to the WHole Bowl yet, well then you are missing it all! A spicy, garlicy, lemony, umami sauce that will make you fall in love with nutritional yeast.',
@@ -19,7 +19,7 @@ export const sauceRecipes = [
         happyprice: 4, 
         price: 6,
     },
-    { id: 'Ajvar',
+    { id: 'ajvar',
         name: 'Ajvar',
         image: '../assets/ajvar.png',
         description: 'Who knew that a combination of eggplant, roasted red pepper, garlic, and some other good spices could make a sauce fitting for just about any dish? Try it with goat cheese!',
@@ -28,7 +28,7 @@ export const sauceRecipes = [
         happyprice: 4,
         price: 5,
     }, 
-    { id: 'Tobys',
+    { id: 'tobys',
         name: 'Toby\'s Tofu Pate',
         image: '../assets/Tobys.png',
         description: 'It goes with anything, it replaces egg salad, it disappears before you knew it! Add a jalapeno for a kick!',
