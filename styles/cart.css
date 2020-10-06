@@ -1,0 +1,13 @@
+table {
+    border: solid 2px white;
+}
+
+th, tr {
+    width: 150px;
+    border: solid 1px white;
+    text-align: center;
+}
+
+tr {
+    text-align: right;
+}
