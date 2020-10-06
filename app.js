@@ -3,16 +3,6 @@
 // initialize state
 // set event listeners to update state and DOM
 
-const sauce = {
-    id: 'Cheese Sauce',
-    name: 'Vegan Nacho Cheese Sauce',
-    image: '../assets/VeganCheesesauce.png',
-    description: 'Do you want cheese, and NACHOS? But you are eating a plant-based diet? This sauce will be your new favorite recipe, guaranteed!!',
-    recipe: 'https://www.noracooks.com/easy-vegan-nacho-cheese-sauce',
-    category: 'sauce',
-    price: 5,
-};
-
 export function renderSauce(sauce) {
  // creates the list element
     const li = document.createElement('li');
@@ -32,11 +22,15 @@ export function renderSauce(sauce) {
     const happyPrice = document.createElement('p');
     happyPrice.classList.add('happy-price');
 
-    for (let i = 0; i < sauce.price ; i++) {
+    for (let i = 0; i < sauce.happyprice ; i++) {
         const yummy = document.createElement('img');
         yummy.src = '../assets/Yummys.png';
         happyPrice.appendChild(yummy);
     }
+
+    const price = document.createElement('p');
+    price.classList.add('price');
+    price.textContent = `$${sauce.price.toFixed(2)} per jar`;
 
     const recipeLink = document.createElement('a');
     recipeLink.href = sauce.recipe;
@@ -49,6 +43,7 @@ export function renderSauce(sauce) {
     li.appendChild(img);
     li.appendChild(description);
     li.appendChild(happyPrice);
+    li.appendChild(price);
     li.appendChild(recipeLink);
     recipeLink.appendChild(button);
 

@@ -1,13 +1,22 @@
 table {
+    width: 80%;
     border: solid 2px white;
+    
 }
 
-th, tr {
-    width: 150px;
+tbody {
     border: solid 1px white;
     text-align: center;
 }
 
+#sauce-cart:nth-child(2) {
+    background-color: rgb(41, 134, 184);
+}
+
 tr {
     text-align: right;
+}
+
+td {
+    border: solid 1px white;
 }
