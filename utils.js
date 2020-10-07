@@ -1,4 +1,20 @@
-//makes the 
+
+
+export function findById(sauceArray, sauceId) {
+    for (let i = 0; i < sauceArray.length; i++) {
+        const item = sauceArray[i];
+        if (item.id === sauceId) {
+            return item;
+        } 
+    } return null;
+}
+
+export function calcLineItem(quantity, amount) {
+    const lineItem = quantity * amount;
+    return lineItem;
+}
+
+//makes the Sauce Products show up in HTML format
 export function renderSauce(sauce) {
  // creates the list element
     const li = document.createElement('li');

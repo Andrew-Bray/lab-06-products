@@ -1,5 +1,6 @@
 // IMPORT MODULES under test here:
 import { renderSauce } from '../utils.js';
+import { renderTableRow } from '../cart/render-line-items.js';
 
 const test = QUnit.test;
 
@@ -25,4 +26,19 @@ test('testing the render sauce funtion to show in HTML for the products page', (
     //Expect
     // Make assertions about what is expected versus the actual result
     expect.equal(actual.outerHTML, expected);
+});
+
+test('testing to make an accurate Cart Line Item', (expect) =>
+{
+    const expected = '<tr><td>Homemade Chocolate Sauce</td><td>3</td><td>$3.50</td><td>$10.50</td></tr>';
+
+    const cart = [{
+        id: 'chocolate',
+        quantity: 3,
+    }];
+
+    const actual = renderTableRow(cart);
+
+    expect.equal(actual.outerHTML, expected);
+
 });
