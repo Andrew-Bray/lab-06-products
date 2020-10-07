@@ -1,4 +1,4 @@
-export const cart = [{
+export const sauceCart = [{
     id: 'ajvar',
     quantity: 2
 }, {

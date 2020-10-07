@@ -35,7 +35,7 @@ export const sauceRecipes = [
         recipe: 'http://www.bowenappetit.com/2013/08/11/homemade-tobys-tofu-pate/',
         category: 'sauce',
         happyprice: 5,
-        price: 6 
+        price: 6, 
     },
     { id: 'mole',
         name: 'Holy Mole Sauce',
