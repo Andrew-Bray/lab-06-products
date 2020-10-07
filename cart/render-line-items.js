@@ -12,8 +12,6 @@ export function renderTableRow(cart) {
     const price = sauceData.price;
     const name = sauceData.name;
 
-    console.log(sauceData.price);
-
 
     tdPrice.textContent = `$${price.toFixed(2)}`;
     tdName.textContent = name;

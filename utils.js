@@ -14,6 +14,17 @@ export function calcLineItem(quantity, amount) {
     return lineItem;
 }
 
+//takes cart array and products array
+export function calcOrderTotal(cartArray, sauceArray) {
+    let accumulator = 0;
+    for (let i = 0; i < cartArray.length; i++) {
+        const item = cartArray[i];
+        const actualItem = findById(sauceArray, item.id);
+        const subTotal = actualItem.price * item.quantity;
+        accumulator = accumulator + subTotal;    
+    }
+    return accumulator;
+}
 //makes the Sauce Products show up in HTML format
 export function renderSauce(sauce) {
  // creates the list element
