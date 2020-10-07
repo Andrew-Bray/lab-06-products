@@ -1,6 +1,8 @@
 // IMPORT MODULES under test here:
-import { renderSauce } from '../utils.js';
+import { calcOrderTotal, renderSauce } from '../utils.js';
 import { renderTableRow } from '../cart/render-line-items.js';
+import { sauceRecipes } from '../data.js';
+import { sauceCart } from '../data/cart-data.js';
 
 const test = QUnit.test;
 
@@ -37,8 +39,20 @@ test('testing to make an accurate Cart Line Item', (expect) =>
         quantity: 3,
     }];
 
-    const actual = renderTableRow(cart);
+    const actual = renderTableRow(cart, sauceRecipes);
 
     expect.equal(actual.outerHTML, expected);
+
+});
+
+test('testing our calcOrderTotal function', (expect) =>
+{
+    const expected = 120;
+
+  
+
+    const actual = calcOrderTotal(sauceCart, sauceRecipes);
+
+    expect.equal(actual, expected);
 
 });
