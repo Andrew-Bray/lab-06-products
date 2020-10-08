@@ -1,5 +1,5 @@
 
-
+//item in an array (suaceArray) that matches said item (sauceId)
 export function findById(sauceArray, sauceId) {
     for (let i = 0; i < sauceArray.length; i++) {
         const item = sauceArray[i];
@@ -8,7 +8,7 @@ export function findById(sauceArray, sauceId) {
         } 
     } return null;
 }
-
+// multiplies amount by quantity
 export function calcLineItem(quantity, amount) {
     const lineItem = quantity * amount;
     return lineItem;
@@ -25,6 +25,18 @@ export function calcOrderTotal(cartArray, sauceArray) {
     }
     return accumulator;
 }
+//returns a key from localStorage after parsing it
+export function getFromLocalStorage(key) {
+    const stringedKey = localStorage.getItem(key);
+    return JSON.parse(stringedKey);
+}
+
+// stringifies a value, and sets the item in localStorage in the key) --> this function will not return anything
+export function setInLocalStorage(key, value) {
+    const stringedObject = JSON.stringify(value);
+    localStorage.setItem(key, stringedObject);
+}
+
 //makes the Sauce Products show up in HTML format
 export function renderSauce(sauce) {
  // creates the list element
@@ -58,9 +70,65 @@ export function renderSauce(sauce) {
     const recipeLink = document.createElement('a');
     recipeLink.href = sauce.recipe;
 
-    const button = document.createElement('button');
-    button.classList.add('recipe-button');
-    button.textContent = 'Go to Recipe';
+    const recipeButton = document.createElement('button');
+    recipeButton.classList.add('recipe-button');
+    recipeButton.textContent = 'Go to Recipe';
+
+    const divCart = document.createElement('div');
+    divCart.classList.add('cart-line');
+
+    const cartButton = document.createElement('button');
+    cartButton.id = 'cart-button';
+    cartButton.textContent = 'Add to Cart';
+
+    //Sjaan's brillian constructor approach
+    const selector = document.createElement('select');
+    selector.id = ('select-number-' + sauce.id);
+
+    const num = new Option();
+    num.value = 1;
+    num.text = '1';
+    selector.options.add(num);
+    const num2 = new Option();
+    num2.value = 2;
+    num2.text = '2';
+    selector.options.add(num2);
+    const num3 = new Option();
+    num3.value = 3;
+    num3.text = '3';
+    selector.options.add(num3);
+    const num4 = new Option();
+    num4.value = 4;
+    num4.text = '4';
+    selector.options.add(num4);
+    const num5 = new Option();
+    num5.value = 5;
+    num5.text = '5';
+    selector.options.add(num5);
+
+    //cartButton add event listener - which does a bunch of complex things 
+//refactor later
+
+    cartButton.addEventListener('click', () => {
+        const dropDown = document.getElementById('select-number-' + sauce.id);
+        const addCartNumber = Number(dropDown.value);
+        const cart = getFromLocalStorage('myCart') || []; // get or inialize the cart
+        const itemInCart = findById(cart, sauce.id);
+     // if item doesn't yet exist, make one with these properites
+        if (itemInCart === null) {
+            const newCartItem = {
+                id: sauce.id,
+                quantity: addCartNumber,
+            };
+            cart.push(newCartItem);
+    // otherwise, add 1 to the item amount
+        } else {
+            itemInCart.quantity += addCartNumber;
+        }
+        // and then run thru function to stringify it and store it in 'myCart'
+        setInLocalStorage('myCart', cart);
+    }
+    );
 
     li.appendChild(h3);
     li.appendChild(img);
@@ -68,7 +136,11 @@ export function renderSauce(sauce) {
     li.appendChild(happyPrice);
     li.appendChild(price);
     li.appendChild(recipeLink);
-    recipeLink.appendChild(button);
+    recipeLink.appendChild(recipeButton);
+    li.appendChild(divCart);
+    divCart.appendChild(cartButton);
+    divCart.appendChild(selector);
+    //selector.appendChild();
 
     return li;
 }

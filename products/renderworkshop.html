@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/home.css">
+    <link rel="stylesheet" href="../styles/products.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <div><a href="../index.html">Goto Main</a></div>
+        <div class="gutter-right logo">
+            <img src="../assets/big-logo.png"/>
+        </div>
+    </header>
+    <main>
+        <section class="main-section">
+            <h2>Welcome to the Page of Excellent Sauces!</h2>
+        <ul id="sauce-list">
+            <li class="sauce" title="Homemade Chocolate Sauce">
+                <h3>Homemade Chocolate Sauce</h3>
+                <img src="../assets/Chocolate Sauce.png">
+                <p class="description">Who needs Hersheys when it is this easy to make your own chocolate syrup? Be careful though, you'll put it in everything!</p>
+                <p class="happy-price"><img src="../assets/Yummys.png"><img src="../assets/Yummys.png"><img src="../assets/Yummys.png"><img src="../assets/Yummys.png">
+                </p>
+                <p class="price">$3.50 per jar</p>
+                <a href="https://barefeetinthekitchen.com/simple-homemade-chocolate-sauce/">
+                    <button class="recipe-button">Go to Recipe</button></a>
+                    <div class="cart-line"><button id="cart-button">Add to Cart</button>
+                        <select id="select-number">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                          </select>
+                    </div>
+            </li>
+        </ul>
+    </section>
+    <div>
+        <a href="../cart"><button id="place-order">Go to your cart</button></a>
+    </div>
+        </main>
+        <footer>
+            <div class="copy gutter-right">&copy; 2020 Alchemy Code Lab</div>
+        </footer>
+
+<script type="module" src="products.js"></script>
+</body>
+
+</html>

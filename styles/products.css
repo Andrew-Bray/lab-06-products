@@ -36,5 +36,10 @@ p {
 
 .happy-price > img {
     width: 22px;
+}
 
+.cart-line {
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 15px;
 }
