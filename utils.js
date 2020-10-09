@@ -1,3 +1,5 @@
+import { sauceRecipes as hardCodedSauces } from './data.js';
+import { CART, PRODUCTS } from './constants.js';
 
 //item in an array (suaceArray) that matches said item (sauceId)
 export function findById(sauceArray, sauceId) {
@@ -36,6 +38,17 @@ export function setInLocalStorage(key, value) {
     const stringedObject = JSON.stringify(value);
     localStorage.setItem(key, stringedObject);
 }
+
+export function addProduct(newProduct) {
+    //takes a product Object as a parameter
+    const localStorageSauces = seedAndGetProducts();
+    localStorageSauces.push(newProduct);
+
+    setInLocalStorage(PRODUCTS, localStorageSauces);
+    //const stringLocalSauces = JSON.stringify(localStorageSauces);
+
+    //localStorage.setItem(PRODUCTS, stringLocalSauces);
+}   
 
 //makes the Sauce Products show up in HTML format
 export function renderSauce(sauce) {
@@ -143,4 +156,18 @@ export function renderSauce(sauce) {
     //selector.appendChild();
 
     return li;
+}
+
+export function seedAndGetProducts() {
+
+    //go get my localStorage array(sauceRecipes) from lS and call the localStorageSauces
+    let localStorageSauces = JSON.parse(localStorage.getItem(PRODUCTS));
+    //if there isnt anythig there yet (thy've never been to the site), we need to set it
+    if (!localStorageSauces) {
+        const stringSauces = JSON.stringify(hardCodedSauces);
+        localStorage.setItem(PRODUCTS, stringSauces);
+        localStorageSauces = hardCodedSauces;
+        //then we need to grab the hardcoded books, and SEEd the local library with them (as string)
+    }
+    return localStorageSauces;
 }

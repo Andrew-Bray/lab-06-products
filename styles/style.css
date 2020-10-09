@@ -59,6 +59,12 @@ header {
     box-shadow: var(--shadow);
 }
 
+.header-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 footer {
     display: flex;
     justify-content: flex-end;
