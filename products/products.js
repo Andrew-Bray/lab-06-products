@@ -1,5 +1,7 @@
-import { sauceRecipes } from '../data.js';
-import { renderSauce } from '../utils.js';
+//import { sauceRecipes } from '../data.js';
+import { renderSauce, seedAndGetProducts } from '../utils.js';
+
+const sauceRecipes = seedAndGetProducts();
 
 // looping function adds each full box of product information
 const ul = document.querySelector('#sauce-list');
