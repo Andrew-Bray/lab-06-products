@@ -31,7 +31,7 @@ orderButton.addEventListener('click', () => {
     //remove items in the cart
     localStorage.removeItem('myCart');
     //go back to main page
-    window.location.href = "/";
+    window.location.href = '../index.html';
     
     
 });
